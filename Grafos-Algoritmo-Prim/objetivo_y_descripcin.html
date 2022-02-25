@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Objetivo y Descripción | Algoritmo de Prim </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Catalina Mostaccio - Gabriela Pérez" />
+<meta name="generator" content="eXeLearning 2.0.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Mostrar",hide:"Ocultar",showFeedback:"Mostrar retroalimentación",hideFeedback:"Ocultar retroalimentación",correct:"Correcto",incorrect:"Incorrecto",menu:"Menú"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" >Algoritmo de Prim</div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inicio</a></li>
+   <li id="active"><a href="objetivo_y_descripcin.html" class="active no-ch">Objetivo y Descripción</a></li>
+   <li><a href="funcionamiento.html" class="daddy">Funcionamiento</a>
+   <ul class="other-section">
+      <li><a href="miscelaneas.html" class="no-ch">Miscelaneas</a></li>
+   </ul>
+   </li>
+   <li><a href="actividades.html" class="no-ch">Actividades</a></li>
+   <li><a href="evaluacin.html" class="no-ch">Evaluación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="index.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="funcionamiento.html" class="next"> Siguiente<span> &raquo;</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Objetivo y Descripción</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_85" class="block iDevice_content">
+<p><span style="font-size: medium;">Sea <span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><strong>G</strong> = ( <strong>V</strong> , <strong>A</strong> )</span></span>, donde <strong>V</strong> es el conjunto de vértices del grafo <strong>G</strong> y <strong>A</strong> es el conjunto de aristas del mismo; <strong>n</strong> es la cantidad de vértices del conjunto <strong>V</strong> y <strong>a</strong> es la cantidad de aristas del conjunto <strong>A</strong>.</span></span></p>
+<p><span style="font-size: medium;">El objetivo del algoritmo de <em><strong>Prim</strong></em> es construir, a partir de <span style="font-size: medium;">un<span style="font-size: medium;"> grafo G no dirigido, pesado y conexo, un árbol abarcador de costo mínimo (MST del inglés Minimum Spanning Tree), es decir, <span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">encuentra un conjunto <strong>T</strong> de <strong>n-1</strong> aristas pertenecientes al conjunto <strong>A</strong> que conectan todos los vértices del grafo; donde el costo total de todas las aristas del árbol es el menor posible</span></span></span>.</span></span></span></span></p>
+<p><span face="tahoma, arial, helvetica, sans-serif" size="3" style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><span style="line-height: 24px;">El algoritmo de <em><strong>Prim</strong></em> comienza inicializando el conjunto <strong>T</strong> (MST resultante) en vacío y el conjunto <strong>U</strong> con un vértice de<strong> V</strong> (v<sub>raiz</sub>) que será la raíz del árbol resultante. El árbol representado por el conjunto <strong>T</strong> crece arista por arista. En cada paso del algoritmo se encuentra la arista de menor costo (<strong>u</strong>,<strong>v</strong>) que conecta <span face="tahoma, arial, helvetica, sans-serif" size="3" style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><span style="line-height: 24px;"><strong>U</strong> con <strong>V</strong> - <strong>U</strong></span></span>, es decir, <strong>u</strong> está en <strong>U </strong>(vértices de árbol) y <strong>v</strong> está en <strong>V</strong> - <strong>U </strong>(vértices del grafo que aún no se incorporaron al árbol) y luego se agrega <strong>v</strong> <strong></strong> a <strong>U</strong> y la arista <span face="tahoma, arial, helvetica, sans-serif" size="3" style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><span style="line-height: 24px;">(<strong>u</strong>,<strong>v</strong>)</span></span> a <span face="tahoma, arial, helvetica, sans-serif" size="3" style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><span style="line-height: 24px;"><span face="tahoma, arial, helvetica, sans-serif" size="3" style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><span style="line-height: 24px;"><strong>T</strong>. Este paso se repite hasta que <span face="tahoma, arial, helvetica, sans-serif" size="3" style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><span style="line-height: 24px;"><span face="tahoma, arial, helvetica, sans-serif" size="3" style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><span style="line-height: 24px;"><strong>U</strong> sea igual a <strong>V</strong>.</span></span></span></span></span></span></span></span> <br /></span></span></p>
+<p><span face="tahoma, arial, helvetica, sans-serif" size="3" style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><span style="line-height: 24px;">Veamos a continuación un resumen del algoritmo:</span></span></p>
+<p><span face="tahoma, arial, helvetica, sans-serif" size="3" style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><span style="line-height: 24px;"><img src="resumen_Prim.png" alt="resumenPrim" title="resumenPrim" width="500" height="255" /></span></span></p>
+<p><span style="font-size: medium;">Veamos un ejemplo de la construcción del MST:</span></p>
+<p><span style="font-size: medium;"><img src="MST500Normal.gif" alt="MST-PRIM-500Normal" title="MST-PRIM-Descripcion" width="500" height="375" /></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="index.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="funcionamiento.html" class="next"> Siguiente<span> &raquo;</span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

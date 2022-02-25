@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Miscelaneas | Algoritmo de Prim </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Catalina Mostaccio - Gabriela Pérez" />
+<meta name="generator" content="eXeLearning 2.0.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={show:"Mostrar",hide:"Ocultar",showFeedback:"Mostrar retroalimentación",hideFeedback:"Ocultar retroalimentación",correct:"Correcto",incorrect:"Incorrecto",menu:"Menú"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" >Algoritmo de Prim</div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inicio</a></li>
+   <li><a href="objetivo_y_descripcin.html" class="no-ch">Objetivo y Descripción</a></li>
+   <li class="current-page-parent"><a href="funcionamiento.html" class="current-page-parent daddy">Funcionamiento</a>
+   <ul>
+      <li id="active"><a href="miscelaneas.html" class="active no-ch">Miscelaneas</a></li>
+   </ul>
+   </li>
+   <li><a href="actividades.html" class="no-ch">Actividades</a></li>
+   <li><a href="evaluacin.html" class="no-ch">Evaluación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="funcionamiento.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="actividades.html" class="next"> Siguiente<span> &raquo;</span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Miscelaneas</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id12">
+<div class="iDevice emphasis0">
+<div id="ta12_85" class="block iDevice_content">
+<p><span face="tahoma, arial, helvetica, sans-serif" size="3" style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><span style="line-height: 24px;">Recordemos que a partir del grafo <strong>G</strong> = ( <strong>V</strong>, <strong>A</strong> ), el resultado del algoritmo de <em><strong>Prim</strong></em> es un conjunto de aristas <strong>T</strong><strong></strong> donde la suma de las mismas es el valor <strong>C</strong> correspondiente costo mínimo de inerconectar todos los vértices de G, veamos algunas particularidades del resultado de aplicar el algoritmo de Prim, tomando el siguiente grafo como ejemplo:<br /></span></span></p>
+<p><span face="tahoma, arial, helvetica, sans-serif" size="3" style="font-family: tahoma, arial, helvetica, sans-serif; font-size: medium;"><span style="line-height: 24px;"><img src="Actividad-Ej4.png" alt="Miscelaneas Ej4" title="Miscelaneas Ej4" style="vertical-align: text-bottom;" width="250" height="142" /></span></span></p>
+<ul>
+<li><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">Si el grafo tiene costos repetidos, podría haber resultados diferentes porque el conjunto de las aristas puede ser distinto, pero el costo minimo es el mismo. Esto se debe a que tomando una arista descarto otra de igual costo. Por ejemplo:<br /></span></span></span></span></li>
+</ul>
+<p><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">             (F,D),<strong>(D,E)</strong>,(E,C),C,B),(B,A),(B,G)  costo 10  ----&gt; tomando <span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><strong>(D,E) </strong>descarto <strong><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><strong>(F,E)</strong></span></span></span></span></strong></span></span></span></span></span></span></span></span></p>
+<p><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">             (F,D),<strong>(F,E)</strong>,(E,C),C,B),(B,A),(B,G)  costo 10   <span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">----&gt; tomando <span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><strong>(F,E) </strong>descarto <strong><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><strong>(D,E)</strong></span></span></span></span></strong></span></span></span></span></span></span></span></span><br /></span></span></span></span></span></span></span></span></span></p>
+<ul>
+<li><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;">Tomando vértices diferentes como raíz, la secuencia en que se toman las aristas podría ser diferente. Por ejemplo:</span></span></li>
+</ul>
+<p style="margin-left: 30px;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">     <span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">tomando <span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><strong><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><strong>F </strong></span></span></span></span></strong><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">como raíz</span></span></span></span></span></span></span></span></span></span></span></span></span>, la secuencia de aristas es: (F,D),(D,E),(E,C),C,B),(B,A),(B,G)  <span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p style="margin-left: 30px;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">    tomando <span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><strong><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><strong>A </strong></span></span></span></span></strong><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">como raíz</span></span></span></span></span></span></span></span></span></span></span></span></span>, la secuencia de aristas es: (A,B),(B,C),<span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">(B,G)</span></span></span></span></span></span></span></span></span></span>,(C,E),(E,F),(F,D)</span></span></span></span></span></span></span></span></span></span></p>
+<p style="margin-left: 30px;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium; font-family: tahoma, arial, helvetica, sans-serif;"><span style="font-size: medium;"><span style="font-size: medium;"><span style="font-size: medium;">   La secuencia en que se tomaron las aristas es diferente pero el conjunto de aristas resultante es el mismo.  </span></span></span></span></span></span></span></span></span></span></p>
+<p><span style="font-family: tahoma,arial,helvetica,sans-serif;"><span style="font-size: medium;">  <br /><span style="font-family: tahoma,arial,helvetica,sans-serif;"><span style="font-size: medium;"></span></span></span></span></p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="funcionamiento.html" class="prev"><span>&laquo; </span>Anterior</a> | <a href="actividades.html" class="next"> Siguiente<span> &raquo;</span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>
