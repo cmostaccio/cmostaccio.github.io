@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Algoritmo en pseudocódigo | Recorridos sobre grafos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Catalina Mostaccio - Gabriela Pérez" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Anterior",next:"Siguiente",show:"Mostrar",hide:"Ocultar",showFeedback:"Mostrar retroalimentación",hideFeedback:"Ocultar retroalimentación",correct:"Correcto",incorrect:"Incorrecto",menu:"Menú",print:"Imprimir"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">Recorridos sobre grafos</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inicio</a></li>
+   <li class="current-page-parent"><a href="recorridos_sobre_grafos.html" class="current-page-parent daddy">Recorridos sobre grafos</a>
+   <ul>
+      <li class="current-page-parent"><a href="dfs__recorrido_en_profundidad.html" class="current-page-parent daddy">DFS - Recorrido en profundidad</a>
+      <ul>
+         <li id="active"><a href="algoritmo_en_pseudocdigo.html" class="active no-ch">Algoritmo en pseudocódigo</a></li>
+      </ul>
+      </li>
+      <li><a href="bfs__recorrido_en_amplitud.html" class="daddy">BFS - Recorrido en amplitud</a>
+      <ul class="other-section">
+         <li><a href="algoritmo_en_pseudocdigo2.html" class="no-ch">Algoritmo en pseudocódigo</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="aplicaciones.html" class="no-ch">Aplicaciones</a></li>
+   <li><a href="actividades.html" class="daddy">Actividades</a>
+   <ul class="other-section">
+      <li><a href="dfs__recorrido_en_profundidad2.html" class="no-ch">DFS - Recorrido en profundidad</a></li>
+      <li><a href="bfs__recorrido_en_amplitud2.html" class="no-ch">BFS - Recorrido en amplitud</a></li>
+   </ul>
+   </li>
+   <li><a href="autoevaluacin.html" class="no-ch">Autoevaluación</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="dfs__recorrido_en_profundidad.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="bfs__recorrido_en_amplitud.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Algoritmo en pseudocódigo</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id23">
+<div class="iDevice emphasis0">
+<div id="ta23_85" class="block iDevice_content">
+<p><span style="font-size: medium;">Se plantea el algoritmo siguiendo un esquema recursivo: </span></p>
+<p style="margin-left: 60px;"><span style="font-size: medium;">dado G = (V , E)</span></p>
+<address style="margin-left: 60px;"><span style="font-size: medium;">1. Marcar todos los vértices como no visitados.</span></address><address style="margin-left: 60px;"><span style="font-size: medium;">2. Elegir vértice u como punto de partida.</span></address><address style="margin-left: 60px;"><span style="font-size: medium;">3. Marcar u como visitado.</span></address><address style="margin-left: 60px;"><span style="font-size: medium;">4. Para todo v adyacente a u,(u,v) Є E, si v no ha sido visitado, llamar recursivamente para ejecutar (3) y (4) para v.</span></address>
+<p><span style="font-size: medium;">Finalizar cuando se hayan visitado todos los nodos alcanzables desde u.</span></p>
+<p><span style="font-size: medium;">Si desde u no fueran alcanzables todos los nodos del grafo: volver a (2), elegir un nuevo vértice de partida v no visitado, y repetir el proceso hasta que se hayan recorrido todos los vértices.</span></p>
+<p><span style="font-size: medium;">Escrito en pseudocódigo:</span></p>
+<address style="margin-left: 60px;"><span style="font-family: 'courier new', courier;"><strong><em><span style="font-size: medium;"> main_dfs (grafo)</span></em></strong></span></address><address style="margin-left: 90px;"><span style="font-size: medium; font-family: 'courier new', courier;">inicializar marca en false (arreglo de booleanos);</span></address><address style="margin-left: 90px;"><span style="font-size: medium; font-family: 'courier new', courier;">para cada vértice v del grafo</span></address><address style="margin-left: 90px;"><span style="font-size: medium; font-family: 'courier new', courier;">       si (marca[v] == noVisitado) -&gt; dfs(v);</span></address><address>          </address><address></address><address style="margin-left: 60px;"><span style="font-size: medium; font-family: 'courier new', courier;"><strong>dfs (v: vértice)</strong></span></address><address style="margin-left: 60px;"><span style="font-family: 'courier new', courier; font-size: medium;">  marca[v]:= visitado;</span></address><address style="margin-left: 60px;"><span style="font-family: 'courier new', courier; font-size: medium;">  para cada nodo w adyacente a v</span></address><address style="margin-left: 60px;"><span style="font-family: 'courier new', courier; font-size: medium;">         si (marca[w] == noVisitado) -&gt; </span><span style="font-size: medium; font-family: 'courier new', courier;">dfs(w);</span></address>
+<p> </p>
+<address></address><address></address>
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="dfs__recorrido_en_profundidad.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="bfs__recorrido_en_amplitud.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

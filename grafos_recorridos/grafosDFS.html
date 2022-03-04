@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Grafos - Recorrido DFS
+		</title>
+		
+		<!-- css sheet for how the page is laid out -->
+		
+		<link rel="stylesheet" href="visualizationPageStyle.css">
+		<link rel="stylesheet" href="jquery-ui-1.8.11.custom.css">
+		<script src="jquery-1.5.2.min.js"></script>
+		<script src="jquery-ui-1.8.11.custom.min.js"></script>
+
+		<script type = "text/javascript" src = "compressed.js"></script>
+        <script type="text/javascript">
+        function init() {
+            var isDirected = false;
+            var animManag = initCanvas();
+            currentAlg = new DFS(animManag, canvas.width, canvas.height, isDirected);
+        }
+        </script>
+	 </head> 
+	
+	<body onload="init();" class="VisualizationMainPage">
+		
+		<div id = "container">
+			
+			<div id="header">  
+				<h1></h1>
+			</div>
+			
+			<div id = "mainContent"> 
+				
+				<div id = "algoControlSection">
+                    <div id = "commonControls">
+                    <span>Agregue las aristas que considere necesarias con el bot&oacute;n agregar. Indique el nodo inicial y el nodo final y se ver&aacute; reflejado en el grafo.<br></span>
+                        <label>Nodo inicial <input type="text" size="4" id="fromEdge"></label>
+                        <label>Nodo final <input type="text" size="4" id="toEdge"></label>
+                        <input type="Button" value="Agregar" id="addEdgeButton">
+							<div id="error"></div>
+                    </div>
+					<div>
+					     <span> </span>
+                        <input type="Button" value="Borrar aristas" id="clearEdgesButton">
+                        <input type="Button" value="Generar aristas de forma aleatoria" id="generateEdgesButton">
+						<span><BR><BR>Para recorrer el grafo con el recorrido DFS indique el nodo inicial y presione recorrer DFS<br></span>
+
+					</div>
+                    <div>
+                        <table id="AlgorithmSpecificControls"> </table> 
+                    </div>
+				</div>
+				<div id="graphSpec">
+                    <div>V={0,1,2,3,4,5,6,7}</div>
+                    <div>E={<span id="edgesList"></span>}</div>
+				</div>
+				
+					<!-- Drawing canvas where all animation is done.  Note:  can be resized in code -->
+									
+				<canvas id="canvas" width="700" height="500"></canvas>
+				
+				<div id = "generalAnimationControlSection">
+					<!-- Table for buttons to control general animation (play/pause/undo/etc) ->
+					<!-- (filled in by javascript code, specifically AnimationMain.js)  -->
+
+					<table id="GeneralAnimationControls">  </table>		
+				</div>
+				
+			</div> <!-- mainContent -->
+			
+			<div id="footer">
+				<p></p>
+			</div>
+
+		</div><!-- container -->
+	</body>
+</html>
